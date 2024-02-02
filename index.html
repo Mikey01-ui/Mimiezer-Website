@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimiezer School || Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0096c7;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      width: 150px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .buttons-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .button-arounder {
+      background-color: #ade8f4;
+      border: 2px solid #a2d2ff;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      margin: 10px;
+      border-radius: 20px;
+      color: #03045e;
+      cursor: pointer;
+      transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out, transform 0.4s ease-out;
+      animation: pulse 1.5s infinite;
+    }
+
+    .button-arounder:hover,
+    .button-arounder:focus {
+      background-color: #7fb4f0;
+      box-shadow: 0 4px 8px hsla(190deg, 50%, 30%, 0.2);
+      transform: translateY(-2px);git push -u origin main
+
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    button {
+      width: 200px;
+    }
+
+    .loader {
+      font-size: 48px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      display: inline-block;
+      color: #03045e;
+      letter-spacing: 2px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .loader::after {
+      content: 'Mimiezer ';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #FFF;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      animation: animloader 3s linear infinite, blinkCursor 0.5s step-end infinite;
+    }
+
+    @keyframes animloader {
+      0%, 100% {
+        width: 0;
+      }
+      50% {
+        width: 100%;
+      }
+    }
+
+    @keyframes blinkCursor {
+      from, to {
+        border-right: 2px solid transparent;
+      }
+      50% {
+        border-right: 2px solid #FFF;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <span class="loader">Mimiezer</span>
+  </div>
+  <div class="content" id="content">
+    <div class="container">
+      <img src="https://www.mmimiezerschools.com/images/logo.png" alt="Mimiezer School Logo">
+      <div class="buttons-container">
+        <a href="Primary/index2.html" class="button-arounder">Explore Primary Section</a>
+        <h1>OR</h1>
+        <a href="Secondary/index.html" class="button-arounder">Discover Secondary Section</a>
+        <br> <br>
+
+
+        <a href="" class="button-arounder">Check Result</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Get references to the loader and content elements
+    var loader = document.getElementById('loader');
+    var content = document.getElementById('content');
+
+    function showLoader() {
+      loader.style.display = 'block'; 
+      content.style.display = 'none';
+    }
+
+    // Function to hide the loader and show the content
+    function hideLoader() {
+      loader.style.display = 'none';
+      content.style.display = 'block';
+    }
+
+    // Show loader for 5 seconds before hiding and displaying content
+    showLoader();
+    setTimeout(function() {
+      hideLoader();
+    }, 1550);
+  </script>
+</body>
+</html>
